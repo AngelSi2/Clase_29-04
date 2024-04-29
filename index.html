@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo.css">
+    <script>
+        
+        // 2. Acceder por medio de su class
+        // 3. querySelector() permite acceder por el tipo.. por ejemplo, también aqui podemos
+        //    acceder por el ID (usamdo # antes del valor)
+        var boton = document.querySelector(".btn")
+        function Saludar(){
+            var nombre = document.getElementById("nombre")
+            var apellido = document.getElementById("apellido")
+            var beca = document.querySelector("#beca")
+            // checked retorna un booleano (true or false)
+            if(beca.checked) {
+                alert(`Hola ${nombre.value} ${apellido.value} tienes beca`)
+            } else {
+                alert(`Hola ${nombre.value} ${apellido.value} no tienes beca`)
+            }
+            
+        }
+    </script>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="col-12">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" class="form-control">
+        </div>
+        <div class="col-12">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" class="form-control">
+        </div>
+        <div class="col-12">
+            <label for="beca">Beca</label>
+            <input type="checkbox" id="beca">
+        </div>
+        <button class="btn btn-primary" onclick="Saludar()" >Saludar!</button>
+    </div>
 </body>
 </html>
